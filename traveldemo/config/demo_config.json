@@ -1,0 +1,49 @@
+{ "servers": [
+        {
+            "name": "Demo18",
+            "dialect": "iris",
+            "database": "User",
+            "driver": "com.intersystems.jdbc.IRISDriver",
+            "host": "18.219.79.33",
+            "password": "sys",
+            "user": "_system",
+            "port": 5551,
+            "schemas": ["SQLUser"]
+        },
+        {
+            "name": "LocalDemo",
+            "dialect": "iris",
+            "database": "User",
+            "driver": "com.intersystems.jdbc.IRISDriver",
+            "host": "localhost",
+            "password": "SYS",
+            "user": "_system",
+            "port": 1999,
+            "schemas": ["SQLUser"]
+        },
+         {
+            "name": "ContainerDemo",
+            "dialect": "iris",
+            "database": "User",
+            "driver": "com.intersystems.jdbc.IRISDriver",
+            "host": "iris",
+            "password": "SYS",
+            "user": "_system",
+            "port": 1972,
+            "schemas": ["SQLUser"]
+        }
+    ],
+    "src_server": "ContainerDemo",
+    "active_llm": "Ollama",
+    "llms": [
+         {"name": "ChatOpenAI",
+         "openai_api_key": "",
+         "model": "gpt-3.5-turbo-1106"
+        },
+        {
+            "name": "Ollama",
+            "model": "orca-mini",
+            "base_url": "http://ollama:11434"
+        }
+    ]
+}

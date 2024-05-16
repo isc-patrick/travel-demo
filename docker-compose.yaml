@@ -1,0 +1,30 @@
+version: '3.6'
+services:
+  iris:
+    build: 
+      context: ./iris
+      dockerfile: Dockerfile
+    restart: always
+    # environment:
+    #   - ISC_CPF_MERGE_FILE=/dev/demo/iris-merge2.cpf
+    command: 
+      --check-caps false
+    ports: 
+      - 1999:1972
+      - 54773:52773
+    volumes:
+      - ./iris:/dev/demo
+      - ./iris/init.sh:/docker-entrypoint-initdb.d/init.sh
+  travel-demo:
+    build:
+      context: ./traveldemo 
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - iris
+    volumes:
+      - ./traveldemo:/traveldemo
+    environment:
+        - BOKEH_RESOURCES=cdn
+    ports: 
+        - 8123:8123

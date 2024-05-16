@@ -1,0 +1,8 @@
+panel==1.4.0
+python-dotenv==1.0.0
+loguru==0.7.2
+watchfiles==0.21.0
+git+https://github.com/isc-patrick/py-iris-utils.git#egg=py_iris_utils
+git+https://git@github.com/isc-patrick/panel-tools.git#egg=paneltools
+sentence_transformers
+loguru
